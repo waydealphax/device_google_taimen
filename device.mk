@@ -35,7 +35,7 @@ DEVICE_PACKAGE_OVERLAYS += device/google/taimen/overlay
 PRODUCT_COPY_FILES += \
     device/google/taimen/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     device/google/taimen/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
-
+include vendor/gapps/arm64/arm64-vendor.mk
 include device/google/wahoo/device.mk
 
 PRODUCT_COPY_FILES += \
@@ -65,14 +65,14 @@ PRODUCT_COPY_FILES += \
     device/google/taimen/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
     device/google/taimen/thermal-engine-vr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-vr.conf
 
-# Shims
-PRODUCT_PACKAGES += \
-    lib-imsvtshim
-
 # Thermal HAL
 PRODUCT_COPY_FILES += \
     device/google/taimen/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
     device/google/taimen/thermal_info_config_evt.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_evt.json
+
+# Shims
+PRODUCT_PACKAGES += \
+    libgui_shim
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -141,3 +141,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.vibrator.hal.tick.duration=4 \
   ro.vibrator.hal.heavyclick.duration=12
 
+#include the gapps builder
+#include vendor/gapps/arm64/arm64-vendor.mk

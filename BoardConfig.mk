@@ -21,6 +21,8 @@ BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 earlycon=msm_serial_dm,0xc1b00
 
 include device/google/wahoo/BoardConfig.mk
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
 BOARD_AVB_ENABLE := true
 
@@ -47,4 +49,4 @@ TARGET_RECOVERY_UI_LIB := \
 BOARD_KERNEL_CMDLINE += androidboot.dtbo_idx=12
 
 # Kernel
-TARGET_KERNEL_CONFIG := wahoo_defconfig
+TARGET_KERNEL_CONFIG := lineageos_taimen_defconfig

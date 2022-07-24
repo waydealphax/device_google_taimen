@@ -1,15 +1,9 @@
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2880
 TARGET_SCREEN_WIDTH := 1440
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_GAPPS_ARCH := arm64
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-TARGET_INCLUDE_STOCK_ARCORE := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 
 # Inherit device configuration
 $(call inherit-product, device/google/taimen/aosp_taimen.mk)
